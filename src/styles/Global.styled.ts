@@ -25,13 +25,7 @@ export const GlobalStyle = createGlobalStyle`
             text-decoration: none;
             color: ${thema.colors.linkColor};
             cursor: pointer;
-              
-            
-
-            &:hover {
-                transform: translateY(-5px);
-                
-            }
+           
         }
 
         ul {

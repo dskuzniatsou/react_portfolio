@@ -1,34 +1,19 @@
-
 import styled, {css} from "styled-components";
-import {thema} from "../../styles/Theme.ts";
+import {thema} from "../../../styles/Theme.ts";
 
-export const MobileMenu = (props:{menuItems: Array<string>}) => {
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen ={true}>
-                 <span> </span>
-            </BurgerButton>
-            <MobileMenuPopup isOpen ={true}>
-                <ul>
-                    {props.menuItems.map((item, index)  =>{
-                        return <MenuList key={index}>
-                            <MenuLink href=''>{item}</MenuLink>
-                        </MenuList>
-                    })}
-
-                </ul>
-            </MobileMenuPopup>
-
-
-        </StyledMobileMenu>
-    );
-};
-
-const StyledMobileMenu = styled.nav`
-    display: none;
-@media ${thema.media.tablet} {
-    display: block;
-}
+const DesktopMenu = styled.nav`
+    ul{
+        display: flex;
+        gap: 55px;
+    }
+`
+const MenuList = styled.li``
+const MenuLink = styled.a`
+    &:hover {
+        color: ${thema.colors.linkActive};
+    }
+`
+const MobileMenu = styled.nav`
 `
 const BurgerButton = styled.button<{isOpen: boolean}>`
     position: fixed;
@@ -88,11 +73,11 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     background-color: rgba(31, 31, 32, 0.9);
     display: none;
     
-    ${props => props.isOpen && css<{ isOpen: boolean }>`{
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
         display: flex;
         justify-content: center;
         align-items: center;
-    }`}
+    `}
     
     ul {
         display: flex;
@@ -100,11 +85,15 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
         justify-content: center;
         align-items: center; ;
         flex-direction: column;
-        height: 100vh;
+        //height: 100vh;
     }
 `
 
-
-const MenuList = styled.li``
-const MenuLink = styled.a`
-`
+export const S = {
+    DesktopMenu,
+    MenuList,
+    MenuLink,
+    MobileMenu,
+    MobileMenuPopup,
+    BurgerButton,
+}

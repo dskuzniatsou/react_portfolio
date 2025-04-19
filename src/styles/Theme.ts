@@ -7,6 +7,7 @@ export const thema =  {
         titleColor: '#CCCCCC',
         descriptionColor: '#A7A7A7',
         linkColor: '#FFFFFF',
+        linkActive: '#fbf819',
         buttonBg: '#9D9D9D',
         footerName: '#ececec',
         stroke:'#696969',

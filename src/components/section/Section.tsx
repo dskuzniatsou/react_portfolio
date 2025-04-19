@@ -1,38 +1,18 @@
 
-import styled from "styled-components";
-import {font} from "../../styles/Common.ts";
-import {thema} from "../../styles/Theme.ts";
 
+import {S}from "./Section_Styles.ts"
+import React from "react";
 type SectionPropsType = {
     title: string;
     description?: string;
 }
 
-export const Section = (props: SectionPropsType) => {
+export const Section: React.FC<SectionPropsType> = (props: SectionPropsType) => {
     return (
-        <StyledSection>
-            <StyledSectionTitle>{props.title}</StyledSectionTitle>
-            <StyledSectionText> {props.description}</StyledSectionText>
-        </StyledSection>
+        <S.Section>
+            <S.SectionTitle>{props.title}</S.SectionTitle>
+            <S.SectionText> {props.description}</S.SectionText>
+        </S.Section>
     );
 };
 
-const StyledSection=styled.div`
- text-align: center;
-`
-const StyledSectionTitle = styled.h2`
-    ${font({weight: 700, Fmax: 48, Fmin: 36})}
-    //font-size: 48px;
-    //font-weight: 700;
-    margin-bottom: 50px;
-    @media ${thema.media.mobile} {
-        margin-bottom: 30px;  
-    }
-`
-const StyledSectionText = styled.p`
-    ${font({weight: 400, Fmax: 32, Fmin: 24})};
-    margin-bottom: 80px;
-    white-space: pre-line;
-    @media ${thema.media.mobile} {
-        margin-bottom: 50px;
-    }`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {thema} from "../styles/Theme.ts";
+
 
 type FlexWrapperPropsType= {
     direction?: string;
